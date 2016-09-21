@@ -1,0 +1,323 @@
+@mixin trans($style:all,$sec:.25s,$effect:ease-in-out){
+	transition: $style $sec $effect;
+	-moz-transition: $style $sec $effect; 
+	-webkit-transition: $style $sec $effect; 
+	-o-transition: $style $sec $effect;
+}
+body{
+	padding-bottom: .18rem;
+	font-family: 'microsoft Yahei';
+	font-size: .28rem;
+	color: #000;
+	background: #4a57bc;
+}
+a,a:hover{
+	text-decoration: none;
+}
+.top-hd{
+	height: .88rem;
+	background: #f6f6f6;
+	text-align: center;
+	font-size: .32rem;
+	color: #000000;
+	h1{
+		display: inline-block;
+		position: relative;
+		line-height: .88rem;
+		font-weight: bold;
+		&::after{
+			position:absolute;
+			display:block;
+			right: -.3rem;
+			content:' ';
+			/*top: .35rem;
+			
+			width: .15rem;
+			height: .15rem;
+			border:.03rem solid #000;
+			border-width: .02rem 0 0 .02rem;*/
+			top: .4rem;
+			width: .18rem;
+			height: .1rem;
+			background: url(../../images/feature-1/arrow.svg) no-repeat;
+			background-size: .18rem .1rem;
+			@include trans;
+			-webkit-transform:rotate(180deg);
+			-moz-transform:rotate(180deg);
+			-ms-transform:rotate(180deg);
+			-o-transform:rotate(180deg);
+			transform:rotate(180deg);
+			/*-webkit-transform:rotate(-135deg);
+			-moz-transform:rotate(-135deg);
+			-ms-transform:rotate(-135deg);
+			-o-transform:rotate(-135deg);
+			transform:rotate(-135deg);*/
+		}
+		&.active::after{
+			-webkit-transform:rotate(0);
+			-moz-transform:rotate(0);
+			-ms-transform:rotate(0);
+			-o-transform:rotate(0);
+			transform:rotate(0);
+		}
+		&.no-em::after{
+			content: '';
+			display: none;
+		}
+	}
+	.logo{
+		display: block;
+		left: .35rem;
+		top: .27rem;
+		img{
+			width: 1rem;
+		}
+	}
+	.back{
+		top: .3rem;
+		left: .3rem;
+		width: .28rem;
+		height: .28rem;
+		border:.03rem solid #8d9095;
+		border-width: .04rem 0 0 .04rem;
+		-webkit-transform:rotate(-45deg);
+		-moz-transform:rotate(-45deg);
+		-ms-transform:rotate(-45deg);
+		-o-transform:rotate(-45deg);
+		transform:rotate(-45deg);
+	}
+	.home{
+		display: block;
+		right:.3rem;
+		top: .2rem;
+		width: .49rem;
+		height: .46rem;
+		background: url(../../images/feature-1/ico-home.png) no-repeat;
+		background-size: .49rem .46rem;
+	}
+}
+
+.t-img{
+	img{
+		width: 6.4rem;
+		height: 2.6rem;
+	}
+}
+#nav,.nav-w{
+	height: .7rem;
+}
+.nav-m{
+	padding: 0 .1rem;
+	height: .7rem;
+	background: #fff;
+	text-align: center;
+	box-sizing: border-box;
+	a{
+		display: inline-block;
+		margin-top: .12rem;
+		padding: 0 .12rem;
+		line-height: .49rem;
+		color: #666;
+		-webkit-border-radius:.06rem;
+		-moz-border-radius:.06rem;
+		-ms-border-radius:.06rem;
+		-o-border-radius:.06rem;
+		border-radius:.06rem;
+		&:hover,&:active,&.active{
+			color:#fff;
+			background: #4a57bc;
+			text-decoration: none;
+		}
+	}
+	&.fx{
+		position: fixed;
+		top: 0;
+		left:0;
+		z-index: 2;
+		width: 100%
+	}
+}
+
+.house-wrap{
+	.t-hd{
+		height: .85rem;
+		background: url(../../images/feature-1/ico-jx.png) no-repeat .22rem .32rem;
+		background-size: .3rem .27rem;
+		text-align: center;
+	}
+	h2{
+		display: inline-block;
+		position: relative;
+		font-size: .36rem;
+		line-height: .85rem;
+		color: #fff;
+		font-weight: bold;
+		&::before,&::after{
+			display:block;
+			position: absolute;
+			top:.32rem;
+			width: .45rem;
+			height: .26rem;
+			background: url(../../images/feature-1/ico-tit.png) no-repeat;
+			background-size: .45rem .26rem;
+			content: " ";
+		}
+		&::before{
+			left: -.45rem
+		}
+		&::after{
+			right: -.45rem
+		}
+	}
+	.h-ls{
+		padding: 0 .09rem;
+		.item{
+			float: left;
+			margin: 0 .09rem .18rem;
+			width: 2.93rem;
+			background: #fff;
+			.t-b{
+				position: relative;
+				height: 2.2rem;
+				img{
+					width: 2.93rem;
+					height: 2.2rem;
+				}
+				.b-bar{
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					line-height: .35rem;
+					color: #fff;
+					font-size: .2rem;
+					text-indent: .2rem;
+					background: rgba(0,0,0,.35);
+				}
+			}
+			.m-if{
+				height: .65rem;
+				line-height: .65rem;
+				font-size: .22rem;
+				border-bottom: 1px dashed #ffc48a;
+				text-align: center;
+				overflow: hidden;
+				.price{
+					margin-right: .04rem;
+					color: #ff0e52;
+					font-weight: bold;
+					font-size: .38rem;
+					letter-spacing: -.03rem;
+					vertical-align: -.05rem;
+				}
+				.st{
+					width: 30%;
+				}
+				.frt{
+					text-indent: .1rem;
+				}
+			}
+			.b-if{
+				line-height: .57rem;
+				img{
+					margin: .12rem 0 0 .19rem;
+					width: 1.54rem;
+					height: .33rem;
+				}
+				.name{
+					float:right;
+					margin-right: .16rem;
+					font-size: .24rem;
+					color: #666;
+				}
+			}
+		}
+		.loading{
+			font-size: .2rem;
+			color: #fff;
+			line-height: 3rem;
+			text-align: center;
+		}
+	}
+	.h-ls-e{
+		margin-top: .18rem;
+	}
+}
+
+.btn-m{
+	display: block;
+	margin: 0 .18rem;
+	line-height: .53rem;
+	background: #778ee3;
+	font-size: .24rem;
+	color: #fff;
+	text-align: center;
+	-webkit-border-radius:.06rem;
+	-moz-border-radius:.06rem;
+	-ms-border-radius:.06rem;
+	-o-border-radius:.06rem;
+	border-radius:.06rem;
+}
+
+.drop-down-box{
+	display: none;
+	position: absolute;
+	top: .75rem;
+	left: 0;
+	right: 0;
+	z-index: 2;
+	margin: auto;
+	width: 2.23rem;
+	text-align: center;
+	@include trans;
+	.arrow-box{
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		margin-left: -.18rem;
+		width: .35rem;
+		height: .15rem;
+		font-size: 0;
+		line-height: 0;
+		overflow: hidden;
+		em{
+			display: block;
+			margin: .04rem 0 0 .09rem;
+			width: .2rem;
+			height: .2rem;
+			background: rgba(0,0,0,.74);
+			-webkit-transform:rotate(-45deg);
+			-moz-transform:rotate(-45deg);
+			-ms-transform:rotate(-45deg);
+			-o-transform:rotate(-45deg);
+			transform:rotate(-45deg);
+		}
+	}
+	.cnt{
+		position: absolute;
+		top: .15rem;
+		left: 0;
+		padding: 0 .15rem;
+		width: 1.93rem;
+		font-size: .26rem;
+		line-height: .69rem;
+		background: rgba(0,0,0,.74);
+		-webkit-border-radius:.06rem;
+		-moz-border-radius:.06rem;
+		-ms-border-radius:.06rem;
+		-o-border-radius:.06rem;
+		border-radius:.06rem;
+		a{
+			display: block;
+			color: #fff;
+			border-bottom: 1px solid #000;
+			&:active,&.active{
+				color:#8d9095;
+			}
+		}
+	}
+}
+.show{
+	display: block!important
+}
